@@ -2,7 +2,7 @@ import { o as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { n as useScroll, r as motion, t as useTransform } from "../_libs/framer-motion.mjs";
 import { n as gsapWithCSS, t as ScrollTrigger } from "../_libs/gsap.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Dc_SpPR0.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DruNOLLX.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function CursorTrail() {
@@ -362,45 +362,64 @@ function BotanicalDivider({ className = "" }) {
 	});
 }
 var hero_default = "/assets/hero-Dm6urAd2.png";
-var piece_necklace_default = "/assets/piece-necklace-D1UVgZ7R.jpg";
-var piece_jhumar_default = "/assets/piece-jhumar-f2IrkXIJ.jpg";
-var piece_earrings_default = "/assets/piece-earrings-GfTPaNGQ.jpg";
-var piece_bridal_default = "/assets/piece-bridal-_iPg4IDK.jpg";
-var piece_mundavli_default = "/assets/piece-mundavli-C1KadmJV.jpg";
+var Client1_default = "/assets/Client1-C8o5CAFn.jpeg";
+var Client2_default = "/assets/Client2-DmTZRyQn.jpeg";
+var Client3_default = "/assets/Client3-62nbJjju.jpeg";
+var Client4_default = "/assets/Client4-DiqUNFjV.jpeg";
+var Client5_default = "/assets/Client5-BqNnRxnM.jpeg";
+var Client6_default = "/assets/Client6-BhtXzCOA.jpeg";
+var Client7_default = "/assets/Client7-Df3zz39t.jpeg";
+var Client8_default = "/assets/Client8-DD4OcZdF.jpeg";
+var Client9_default = "/assets/Client9-DNXlfWbp.jpeg";
+var Client10_default = "/assets/Client10-DPYma4lK.jpeg";
+var Client11_default = "/assets/Client11-3Kc_tJxe.jpeg";
 var craft_process_default = "/assets/craft-process-CVGX3aNt.jpg";
 var pieces = [
 	{
 		name: "Rose & Jasmine Necklace",
 		cat: "Bridal",
-		img: piece_necklace_default
+		img: Client1_default
 	},
 	{
 		name: "Marigold Jhumar",
 		cat: "Haldi",
-		img: piece_jhumar_default
+		img: Client2_default
 	},
 	{
 		name: "Blush Petal Earrings",
 		cat: "Mehndi",
-		img: piece_earrings_default
+		img: Client3_default
 	},
 	{
 		name: "Complete Bridal Set",
 		cat: "Wedding",
-		img: piece_bridal_default
+		img: Client4_default
 	},
 	{
 		name: "Pearl Mundavli",
 		cat: "Ceremony",
-		img: piece_mundavli_default
+		img: Client5_default
 	}
+];
+var clientGallery = [
+	Client1_default,
+	Client2_default,
+	Client3_default,
+	Client4_default,
+	Client5_default,
+	Client6_default,
+	Client7_default,
+	Client8_default,
+	Client9_default,
+	Client10_default,
+	Client11_default
 ];
 var signatureStories = [
 	{
 		title: "Rose & Jasmine Necklace",
 		kicker: "Bridal glow",
 		summary: "Soft jasmine strands and rose accents designed to feel luminous in close-up portraits and ceremony light.",
-		img: piece_necklace_default,
+		img: Client1_default,
 		accent: "#cf8aa3",
 		highlights: [
 			"Made around your outfit palette",
@@ -412,7 +431,7 @@ var signatureStories = [
 		title: "Marigold Jhumar",
 		kicker: "Haldi brightness",
 		summary: "A joyful marigold composition that brings movement, warmth, and that fresh haldi radiance to the frame.",
-		img: piece_jhumar_default,
+		img: Client2_default,
 		accent: "#d89a3f",
 		highlights: [
 			"Built for bright ceremonial photos",
@@ -424,7 +443,7 @@ var signatureStories = [
 		title: "Blush Petal Earrings",
 		kicker: "Mehndi detail",
 		summary: "Delicate floral earrings with a soft blush finish for evenings, mehndi moments, and graceful family portraits.",
-		img: piece_earrings_default,
+		img: Client3_default,
 		accent: "#e3a7b3",
 		highlights: [
 			"Refined close-up finish",
@@ -436,7 +455,7 @@ var signatureStories = [
 		title: "Complete Bridal Set",
 		kicker: "Wedding harmony",
 		summary: "A complete bridal story with coordinated blooms, pearls, and thoughtful balance across every piece.",
-		img: piece_bridal_default,
+		img: Client4_default,
 		accent: "#b78a4f",
 		highlights: [
 			"Coordinated for the full look",
@@ -448,7 +467,7 @@ var signatureStories = [
 		title: "Pearl Mundavli",
 		kicker: "Ceremony framing",
 		summary: "A traditional face-framing floral piece with a polished pearl finish, ideal for mandap and ritual moments.",
-		img: piece_mundavli_default,
+		img: Client5_default,
 		accent: "#8ea378",
 		highlights: [
 			"Traditional silhouette",
@@ -1565,15 +1584,7 @@ function Gallery() {
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
 			style: { y },
 			className: "mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-6 md:grid-cols-4",
-			children: [
-				piece_necklace_default,
-				piece_jhumar_default,
-				piece_mundavli_default,
-				piece_earrings_default,
-				piece_bridal_default,
-				piece_necklace_default,
-				piece_jhumar_default
-			].map((img, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+			children: clientGallery.map((img, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
 				initial: {
 					opacity: 0,
 					scale: .9

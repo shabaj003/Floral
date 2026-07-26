@@ -11,11 +11,17 @@ import { LogoMark, BotanicalDivider } from "@/components/Logo";
 
 import homePanelBackground from "@/assets/Home.jpg";
 import heroPNG from "@/assets/hero.png";
-import pieceNecklace from "@/assets/piece-necklace.jpg";
-import pieceJhumar from "@/assets/piece-jhumar.jpg";
-import pieceEarrings from "@/assets/piece-earrings.jpg";
-import pieceBridal from "@/assets/piece-bridal.jpg";
-import pieceMundavli from "@/assets/piece-mundavli.jpg";
+import client1 from "@/assets/Client1.jpeg";
+import client2 from "@/assets/Client2.jpeg";
+import client3 from "@/assets/Client3.jpeg";
+import client4 from "@/assets/Client4.jpeg";
+import client5 from "@/assets/Client5.jpeg";
+import client6 from "@/assets/Client6.jpeg";
+import client7 from "@/assets/Client7.jpeg";
+import client8 from "@/assets/Client8.jpeg";
+import client9 from "@/assets/Client9.jpeg";
+import client10 from "@/assets/Client10.jpeg";
+import client11 from "@/assets/Client11.jpeg";
 import craftProcess from "@/assets/craft-process.jpg";
 
 export const Route = createFileRoute("/")({
@@ -31,53 +37,67 @@ export const Route = createFileRoute("/")({
 });
 
 const pieces = [
-  { name: "Rose & Jasmine Necklace", cat: "Bridal", img: pieceNecklace },
-  { name: "Marigold Jhumar", cat: "Haldi", img: pieceJhumar },
-  { name: "Blush Petal Earrings", cat: "Mehndi", img: pieceEarrings },
-  { name: "Complete Bridal Set", cat: "Wedding", img: pieceBridal },
-  { name: "Pearl Mundavli", cat: "Ceremony", img: pieceMundavli },
+  { name: "Blush Lotus Bridal Set", cat: "Bridal", img: client1 },
+  { name: "Lotus Bloom Ceremony Set", cat: "Haldi", img: client2 },
+  { name: "Petal Pearl Statement Jewellery", cat: "Mehndi", img: client3 },
+  { name: "Pink Lotus Jhumar", cat: "Wedding", img: client4 },
+  { name: "Blush Mehndi Floral Adornments", cat: "Ceremony", img: client5 },
+];
+
+const clientGallery = [
+  client1,
+  client2,
+  client3,
+  client4,
+  client5,
+  client6,
+  client7,
+  client8,
+  client9,
+  client10,
+  client11,
 ];
 
 
 
 const signatureStories = [
   {
-    title: "Rose & Jasmine Necklace",
+    title: "Blush Lotus Bridal Set",
     kicker: "Bridal glow",
     summary: "Soft jasmine strands and rose accents designed to feel luminous in close-up portraits and ceremony light.",
-    img: pieceNecklace,
+    img: client1,
     accent: "#cf8aa3",
     highlights: ["Made around your outfit palette", "Lightweight for long celebrations", "Photogenic from every angle"],
   },
   {
-    title: "Marigold Jhumar",
+    title: "Lotus Bloom Ceremony Set",
     kicker: "Haldi brightness",
     summary: "A joyful marigold composition that brings movement, warmth, and that fresh haldi radiance to the frame.",
-    img: pieceJhumar,
+    img: client2,
     accent: "#d89a3f",
     highlights: ["Built for bright ceremonial photos", "Elegant but easy to wear", "Custom bloom density on request"],
   },
   {
-    title: "Blush Petal Earrings",
+    title: "Petal Pearl Statement Jewellery",
     kicker: "Mehndi detail",
     summary: "Delicate floral earrings with a soft blush finish for evenings, mehndi moments, and graceful family portraits.",
-    img: pieceEarrings,
+    img: client3,
     accent: "#e3a7b3",
     highlights: ["Refined close-up finish", "Made to balance comfort and style", "Pairs well with matching sets"],
   },
   {
-    title: "Complete Bridal Set",
+    title: "Pink Lotus Jhumar",
     kicker: "Wedding harmony",
     summary: "A complete bridal story with coordinated blooms, pearls, and thoughtful balance across every piece.",
-    img: pieceBridal,
+    img: client4,
     accent: "#b78a4f",
     highlights: ["Coordinated for the full look", "Designed for ceremonial flow", "Customisable for your event"],
   },
   {
-    title: "Pearl Mundavli",
+    title: "Blush Mehndi Floral Adornments",
     kicker: "Ceremony framing",
     summary: "A traditional face-framing floral piece with a polished pearl finish, ideal for mandap and ritual moments.",
-    img: pieceMundavli,
+    img: client5,
     accent: "#8ea378",
     highlights: ["Traditional silhouette", "Comfortable ceremonial fit", "Refined for portraits and rituals"],
   },
@@ -657,7 +677,7 @@ function Gallery() {
     <section className="relative py-24 px-6">
       <SectionHeading eyebrow="Moments" title="From Our Brides & Ceremonies" />
       <motion.div style={{ y }} className="mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-6 md:grid-cols-4">
-        {[pieceNecklace, pieceJhumar, pieceMundavli, pieceEarrings, pieceBridal, pieceNecklace, pieceJhumar].map((img, i) => (
+        {clientGallery.map((img, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, scale: 0.9 }}
