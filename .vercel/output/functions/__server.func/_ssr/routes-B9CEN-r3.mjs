@@ -2,7 +2,7 @@ import { o as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { n as useScroll, r as motion, t as useTransform } from "../_libs/framer-motion.mjs";
 import { n as gsapWithCSS, t as ScrollTrigger } from "../_libs/gsap.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DruNOLLX.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-B9CEN-r3.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function CursorTrail() {
@@ -376,27 +376,27 @@ var Client11_default = "/assets/Client11-3Kc_tJxe.jpeg";
 var craft_process_default = "/assets/craft-process-CVGX3aNt.jpg";
 var pieces = [
 	{
-		name: "Rose & Jasmine Necklace",
+		name: "Blush Lotus Bridal Set",
 		cat: "Bridal",
 		img: Client1_default
 	},
 	{
-		name: "Marigold Jhumar",
+		name: "Lotus Bloom Ceremony Set",
 		cat: "Haldi",
 		img: Client2_default
 	},
 	{
-		name: "Blush Petal Earrings",
+		name: "Petal Pearl Statement Jewellery",
 		cat: "Mehndi",
 		img: Client3_default
 	},
 	{
-		name: "Complete Bridal Set",
+		name: "Pink Lotus Jhumar",
 		cat: "Wedding",
 		img: Client4_default
 	},
 	{
-		name: "Pearl Mundavli",
+		name: "Blush Mehndi Floral Adornments",
 		cat: "Ceremony",
 		img: Client5_default
 	}
@@ -416,7 +416,7 @@ var clientGallery = [
 ];
 var signatureStories = [
 	{
-		title: "Rose & Jasmine Necklace",
+		title: "Blush Lotus Bridal Set",
 		kicker: "Bridal glow",
 		summary: "Soft jasmine strands and rose accents designed to feel luminous in close-up portraits and ceremony light.",
 		img: Client1_default,
@@ -428,7 +428,7 @@ var signatureStories = [
 		]
 	},
 	{
-		title: "Marigold Jhumar",
+		title: "Lotus Bloom Ceremony Set",
 		kicker: "Haldi brightness",
 		summary: "A joyful marigold composition that brings movement, warmth, and that fresh haldi radiance to the frame.",
 		img: Client2_default,
@@ -440,7 +440,7 @@ var signatureStories = [
 		]
 	},
 	{
-		title: "Blush Petal Earrings",
+		title: "Petal Pearl Statement Jewellery",
 		kicker: "Mehndi detail",
 		summary: "Delicate floral earrings with a soft blush finish for evenings, mehndi moments, and graceful family portraits.",
 		img: Client3_default,
@@ -452,7 +452,7 @@ var signatureStories = [
 		]
 	},
 	{
-		title: "Complete Bridal Set",
+		title: "Pink Lotus Jhumar",
 		kicker: "Wedding harmony",
 		summary: "A complete bridal story with coordinated blooms, pearls, and thoughtful balance across every piece.",
 		img: Client4_default,
@@ -464,7 +464,7 @@ var signatureStories = [
 		]
 	},
 	{
-		title: "Pearl Mundavli",
+		title: "Blush Mehndi Floral Adornments",
 		kicker: "Ceremony framing",
 		summary: "A traditional face-framing floral piece with a polished pearl finish, ideal for mandap and ritual moments.",
 		img: Client5_default,
