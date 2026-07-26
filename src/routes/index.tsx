@@ -695,7 +695,7 @@ function BookingContact() {
               <span>Message on Instagram</span>
             </a>
             <a
-              href='https://wa.me/919999999999'
+              href='https://wa.me/918830813005'
               target='_blank'
               rel='noreferrer'
               className='btn-outline-gold inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-sm uppercase tracking-[0.25em]'
@@ -714,7 +714,7 @@ function BookingContact() {
             href='https://instagram.com/floralart_by_sadiya'
           />
           <ContactCard icon={<PinIcon />} title='Studio' detail='Baramati, Maharashtra' />
-          <ContactCard icon={<WhatsAppIcon />} title='WhatsApp' detail='+91 99999 99999' href='https://wa.me/919999999999' />
+          <ContactCard icon={<WhatsAppIcon />} title='WhatsApp' detail='+91 88308 13005' href='https://wa.me/918830813005' />
           <ContactCard icon={<TruckIcon />} title='Courier' detail='Pan-India same-day dispatch' />
         </div>
       </div>

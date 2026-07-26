@@ -2,7 +2,7 @@ import { o as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { n as useScroll, r as motion, t as useTransform } from "../_libs/framer-motion.mjs";
 import { n as gsapWithCSS, t as ScrollTrigger } from "../_libs/gsap.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Dw4Mk5oe.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Dc_SpPR0.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function CursorTrail() {
@@ -1631,7 +1631,7 @@ function BookingContact() {
 							className: "btn-gold inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-sm uppercase tracking-[0.25em]",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Message on Instagram" })
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-							href: "https://wa.me/919999999999",
+							href: "https://wa.me/918830813005",
 							target: "_blank",
 							rel: "noreferrer",
 							className: "btn-outline-gold inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-sm uppercase tracking-[0.25em]",
@@ -1656,8 +1656,8 @@ function BookingContact() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContactCard, {
 						icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WhatsAppIcon, {}),
 						title: "WhatsApp",
-						detail: "+91 99999 99999",
-						href: "https://wa.me/919999999999"
+						detail: "+91 88308 13005",
+						href: "https://wa.me/918830813005"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContactCard, {
 						icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TruckIcon, {}),
