@@ -2,219 +2,9 @@ import { o as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { n as useScroll, r as motion, t as useTransform } from "../_libs/framer-motion.mjs";
 import { n as gsapWithCSS, t as ScrollTrigger } from "../_libs/gsap.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-B9CEN-r3.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DEMH217h.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-function CursorTrail() {
-	const dotRef = (0, import_react.useRef)(null);
-	const ringRef = (0, import_react.useRef)(null);
-	const trailsRef = (0, import_react.useRef)([]);
-	(0, import_react.useEffect)(() => {
-		if (typeof window === "undefined") return;
-		if (window.matchMedia("(pointer: coarse)").matches) return;
-		let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-		let rx = mx, ry = my;
-		const trails = trailsRef.current;
-		let idx = 0;
-		const move = (e) => {
-			mx = e.clientX;
-			my = e.clientY;
-			if (dotRef.current) dotRef.current.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
-			const t = trails[idx % trails.length];
-			if (t) {
-				t.style.transform = `translate(${mx - 8}px, ${my - 8}px) scale(1) rotate(${Math.random() * 360}deg)`;
-				t.style.opacity = "0.9";
-				setTimeout(() => {
-					t.style.opacity = "0";
-					t.style.transform = `translate(${mx - 8}px, ${my + 30}px) scale(0.3) rotate(${Math.random() * 360}deg)`;
-				}, 30);
-			}
-			idx++;
-		};
-		const loop = () => {
-			rx += (mx - rx) * .15;
-			ry += (my - ry) * .15;
-			if (ringRef.current) ringRef.current.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
-			requestAnimationFrame(loop);
-		};
-		window.addEventListener("mousemove", move);
-		const raf = requestAnimationFrame(loop);
-		return () => {
-			window.removeEventListener("mousemove", move);
-			cancelAnimationFrame(raf);
-		};
-	}, []);
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "pointer-events-none fixed inset-0 z-[100] hidden md:block",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				ref: dotRef,
-				className: "absolute h-2 w-2 rounded-full bg-gold",
-				style: { boxShadow: "0 0 12px #d4af37" }
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				ref: ringRef,
-				className: "absolute h-9 w-9 rounded-full border border-gold/60 transition-transform"
-			}),
-			Array.from({ length: 14 }).map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				ref: (el) => {
-					if (el) trailsRef.current[i] = el;
-				},
-				className: "absolute h-4 w-4 opacity-0 transition-all duration-700",
-				style: {
-					background: "radial-gradient(circle, #f5d98a 0%, #d4af37 40%, transparent 70%)",
-					borderRadius: "50% 0 50% 50%"
-				}
-			}, i))
-		]
-	});
-}
-function PetalRain({ count = 22 }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "pointer-events-none absolute inset-0 overflow-hidden",
-		children: (0, import_react.useMemo)(() => Array.from({ length: count }).map((_, i) => ({
-			id: i,
-			left: Math.random() * 100,
-			delay: Math.random() * 12,
-			duration: 12 + Math.random() * 14,
-			size: 10 + Math.random() * 16,
-			hue: Math.random() > .5 ? "#e8b4b8" : "#f5d98a",
-			opacity: .4 + Math.random() * .5
-		})), [count]).map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			className: "absolute top-0",
-			style: {
-				left: `${p.left}%`,
-				width: p.size,
-				height: p.size,
-				background: `radial-gradient(circle at 30% 30%, ${p.hue} 0%, transparent 70%)`,
-				borderRadius: "50% 0 50% 50%",
-				opacity: p.opacity,
-				animation: `petal-fall ${p.duration}s linear ${p.delay}s infinite`,
-				filter: "blur(0.5px)"
-			}
-		}, p.id))
-	});
-}
-var floatingFlowers = [
-	{
-		id: 1,
-		delay: 0,
-		duration: 8,
-		size: "w-8 h-8",
-		color: "bg-rose/40",
-		left: "5%",
-		startY: 0
-	},
-	{
-		id: 2,
-		delay: 1.2,
-		duration: 9,
-		size: "w-6 h-6",
-		color: "bg-lotus/35",
-		left: "15%",
-		startY: 0
-	},
-	{
-		id: 3,
-		delay: 2.4,
-		duration: 10,
-		size: "w-7 h-7",
-		color: "bg-gold/30",
-		left: "25%",
-		startY: 0
-	},
-	{
-		id: 4,
-		delay: .6,
-		duration: 8.5,
-		size: "w-5 h-5",
-		color: "bg-pink/35",
-		left: "35%",
-		startY: 0
-	},
-	{
-		id: 5,
-		delay: 1.8,
-		duration: 9.5,
-		size: "w-7 h-7",
-		color: "bg-rose/30",
-		left: "55%",
-		startY: 0
-	},
-	{
-		id: 6,
-		delay: .3,
-		duration: 8.2,
-		size: "w-6 h-6",
-		color: "bg-lotus/40",
-		left: "65%",
-		startY: 0
-	},
-	{
-		id: 7,
-		delay: 2.1,
-		duration: 9.8,
-		size: "w-5 h-5",
-		color: "bg-gold/25",
-		left: "75%",
-		startY: 0
-	},
-	{
-		id: 8,
-		delay: .9,
-		duration: 10.2,
-		size: "w-6 h-6",
-		color: "bg-pink/30",
-		left: "85%",
-		startY: 0
-	},
-	{
-		id: 9,
-		delay: 1.5,
-		duration: 9.2,
-		size: "w-7 h-7",
-		color: "bg-rose/25",
-		left: "45%",
-		startY: 0
-	}
-];
-function FloatingFlowers() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "fixed inset-0 pointer-events-none overflow-hidden",
-		children: floatingFlowers.map((flower) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
-			"aria-hidden": "true",
-			className: `absolute ${flower.size} ${flower.color} rounded-full blur-md`,
-			style: {
-				left: flower.left,
-				bottom: "-50px"
-			},
-			animate: {
-				y: [-50, -window.innerHeight - 100],
-				x: [
-					0,
-					Math.sin(flower.id) * 80 - 40,
-					0
-				],
-				opacity: [
-					0,
-					.6,
-					0
-				],
-				rotate: [
-					0,
-					360,
-					360
-				]
-			},
-			transition: {
-				duration: flower.duration,
-				repeat: Infinity,
-				delay: flower.delay,
-				ease: "linear"
-			}
-		}, flower.id))
-	});
-}
 function LogoMark({ size = 64 }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
 		viewBox: "0 0 100 100",
@@ -362,6 +152,7 @@ function BotanicalDivider({ className = "" }) {
 	});
 }
 var hero_default = "/assets/hero-Dm6urAd2.png";
+var website_background_default = "/assets/website-background-C2RYxZTP.avif";
 var Client1_default = "/assets/Client1-C8o5CAFn.jpeg";
 var Client2_default = "/assets/Client2-DmTZRyQn.jpeg";
 var Client3_default = "/assets/Client3-62nbJjju.jpeg";
@@ -477,15 +268,12 @@ var signatureStories = [
 	}
 ];
 function FloralartHome() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "relative bg-background text-ivory",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "fixed inset-0 z-0 pointer-events-none",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PetalRain, { count: 18 }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FloatingFlowers, {})]
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "editorial-page relative bg-background text-ivory",
+		style: { "--website-background": `url(${website_background_default})` },
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "relative z-10",
 			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CursorTrail, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Nav, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Showcase, {}),
@@ -495,7 +283,7 @@ function FloralartHome() {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(BookingContact, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {})
 			]
-		})]
+		})
 	});
 }
 function Nav() {
@@ -522,42 +310,42 @@ function Nav() {
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LogoMark, { size: 44 }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "hidden sm:block leading-tight",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "text-script text-2xl leading-none",
+							className: "font-display text-2xl leading-none text-forest",
 							children: "Floralart"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "text-[10px] tracking-[0.35em] text-gold/70",
+							className: "text-[10px] tracking-[0.35em] text-sage",
 							children: "BY SADIYA"
 						})]
 					})]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-					className: "hidden items-center gap-8 text-xs uppercase tracking-[0.25em] text-ivory/70 md:flex",
+					className: "hidden items-center gap-8 text-sm text-forest/70 md:flex",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 							href: "#showcase",
-							className: "hover:text-gold transition",
+							className: "nav-link",
 							children: "Showcase"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 							href: "#craft",
-							className: "hover:text-gold transition",
+							className: "nav-link",
 							children: "Craft"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 							href: "#services",
-							className: "hover:text-gold transition",
+							className: "nav-link",
 							children: "Services"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 							href: "#booking",
-							className: "hover:text-gold transition",
+							className: "nav-link",
 							children: "Booking"
 						})
 					]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 					href: "#booking",
-					className: "btn-gold rounded-full px-5 py-2 text-xs uppercase tracking-[0.2em]",
+					className: "btn-green rounded-full px-5 py-3 text-xs uppercase tracking-[0.2em]",
 					children: "DM to Book"
 				})
 			]
@@ -565,34 +353,9 @@ function Nav() {
 	});
 }
 function Hero() {
-	const tagline = "Handmade with love, crafted for your special moments.";
-	const [typed, setTyped] = (0, import_react.useState)("");
-	const heroHighlights = [
-		{
-			label: "Fresh-to-order",
-			value: "Blooms"
-		},
-		{
-			label: "Baramati studio",
-			value: "Custom"
-		},
-		{
-			label: "Same-day dispatch",
-			value: "Pan-India"
-		}
-	];
-	(0, import_react.useEffect)(() => {
-		let i = 0;
-		const id = setInterval(() => {
-			i++;
-			setTyped(tagline.slice(0, i));
-			if (i >= 53) clearInterval(id);
-		}, 35);
-		return () => clearInterval(id);
-	}, []);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		id: "top",
-		className: "relative overflow-hidden pt-28 pb-20 md:pt-32 md:pb-24",
+		className: "editorial-hero relative overflow-hidden pt-28 pb-20 md:pt-32 md:pb-24",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-b from-background/15 via-background/30 to-background/55" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
@@ -658,9 +421,9 @@ function Hero() {
 				}
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl items-center px-6 md:px-10",
+				className: "mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl items-start px-6 pt-5 md:px-10 md:pt-7",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "grid w-full gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center",
+					className: "grid w-full gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-start",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
 						initial: {
 							opacity: 0,
@@ -690,39 +453,9 @@ function Hero() {
 									duration: .8,
 									delay: .1
 								},
-								children: "Baramati - Est. Handmade"
+								children: "REAL FLOWERS · REFINED PRESENTATION"
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
-								className: "mt-6 flex justify-center lg:justify-start",
-								animate: { y: [
-									0,
-									-6,
-									0
-								] },
-								transition: {
-									duration: 6,
-									repeat: Infinity,
-									ease: "easeInOut"
-								},
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LogoMark, { size: 92 })
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
-								className: "mx-auto mt-5 flex w-fit items-center gap-2 rounded-full border border-gold/20 bg-black/20 px-4 py-2 text-[10px] uppercase tracking-[0.35em] text-gold/80 backdrop-blur-sm lg:mx-0",
-								initial: {
-									opacity: 0,
-									scale: .9
-								},
-								animate: {
-									opacity: 1,
-									scale: 1
-								},
-								transition: {
-									duration: .8,
-									delay: .18
-								},
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-2 w-2 rounded-full bg-gold animate-pulse" }), "Floral jewellery made for ceremonies"]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.h1, {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.h1, {
 								initial: {
 									opacity: 0,
 									y: 18
@@ -736,41 +469,35 @@ function Hero() {
 									delay: .22
 								},
 								className: "mt-6 text-script text-6xl leading-none sm:text-8xl md:text-9xl text-gold-shimmer",
-								children: "Floralart"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
-								className: "mt-2 flex items-center justify-center gap-4 lg:justify-start",
-								initial: {
-									opacity: 0,
-									scaleX: .85
-								},
-								animate: {
-									opacity: 1,
-									scaleX: 1
-								},
-								transition: {
-									duration: .7,
-									delay: .3
-								},
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "h-px w-16 bg-gold/50" }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-xs uppercase tracking-[0.5em] text-ivory/80",
-										children: "by Sadiya"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "h-px w-16 bg-gold/50" })
+									"Nature-led florals for ",
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", { children: "timeless" }),
+									" celebrations."
 								]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "mt-10 min-h-16 max-w-xl",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "font-display text-lg italic text-ivory/85 md:text-xl",
-									children: [typed, /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "ml-1 inline-block h-4 w-[2px] animate-pulse bg-gold align-middle" })]
+									children: "Floralart by Sadiya creates made-to-order pieces with fresh blooms, pearls, and delicate finishing for haldi, mehndi, baby showers, mundavli, engagements, and weddings."
 								})
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "mt-8 grid gap-3 sm:grid-cols-3",
-								children: heroHighlights.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+								children: [
+									{
+										label: "Fresh-to-order",
+										value: "Blooms"
+									},
+									{
+										label: "Baramati studio",
+										value: "Custom"
+									},
+									{
+										label: "Same-day dispatch",
+										value: "Pan-India"
+									}
+								].map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
 									initial: {
 										opacity: 0,
 										y: 18
@@ -832,7 +559,7 @@ function Hero() {
 							ease: "easeOut",
 							delay: .15
 						},
-						className: "relative",
+						className: "hero-visual relative",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
 								"aria-hidden": "true",
@@ -961,7 +688,7 @@ function Hero() {
 								}
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
-								className: "relative overflow-hidden rounded-[2rem] border border-gold/20 bg-white/72 shadow-[0_24px_70px_rgba(63,59,42,0.14)]",
+								className: "hero-object relative overflow-hidden rounded-[2rem] border border-gold/20 bg-white/72 shadow-[0_24px_70px_rgba(63,59,42,0.14)]",
 								animate: {
 									y: [
 										0,

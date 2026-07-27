@@ -1,16 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import CursorTrail from "@/components/CursorTrail";
-import PetalRain from "@/components/PetalRain";
-import FloatingFlowers from "@/components/FloatingFlowers";
 import { LogoMark, BotanicalDivider } from "@/components/Logo";
 
-import homePanelBackground from "@/assets/Home.jpg";
 import heroPNG from "@/assets/hero.png";
+import websiteBackground from "@/assets/website-background.avif";
 import client1 from "@/assets/Client1.jpeg";
 import client2 from "@/assets/Client2.jpeg";
 import client3 from "@/assets/Client3.jpeg";
@@ -105,13 +102,8 @@ const signatureStories = [
 
 function FloralartHome() {
   return (
-    <div className="relative bg-background text-ivory">
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <PetalRain count={18} />
-        <FloatingFlowers />
-      </div>
+    <div className="editorial-page relative bg-background text-ivory" style={{ '--website-background': `url(${websiteBackground})` } as React.CSSProperties}>
       <div className="relative z-10">
-        <CursorTrail />
         <Nav />
         <Hero />
         <Showcase />
@@ -137,17 +129,17 @@ function Nav() {
         <a href="#top" className="flex items-center gap-3">
           <LogoMark size={44} />
           <div className="hidden sm:block leading-tight">
-            <div className="text-script text-2xl leading-none">Floralart</div>
-            <div className="text-[10px] tracking-[0.35em] text-gold/70">BY SADIYA</div>
+            <div className="font-display text-2xl leading-none text-forest">Floralart</div>
+            <div className="text-[10px] tracking-[0.35em] text-sage">BY SADIYA</div>
           </div>
         </a>
-        <nav className="hidden items-center gap-8 text-xs uppercase tracking-[0.25em] text-ivory/70 md:flex">
-          <a href="#showcase" className="hover:text-gold transition">Showcase</a>
-          <a href="#craft" className="hover:text-gold transition">Craft</a>
-          <a href="#services" className="hover:text-gold transition">Services</a>
-          <a href="#booking" className="hover:text-gold transition">Booking</a>
+        <nav className="hidden items-center gap-8 text-sm text-forest/70 md:flex">
+          <a href="#showcase" className="nav-link">Showcase</a>
+          <a href="#craft" className="nav-link">Craft</a>
+          <a href="#services" className="nav-link">Services</a>
+          <a href="#booking" className="nav-link">Booking</a>
         </nav>
-        <a href="#booking" className="btn-gold rounded-full px-5 py-2 text-xs uppercase tracking-[0.2em]">
+        <a href="#booking" className="btn-green rounded-full px-5 py-3 text-xs uppercase tracking-[0.2em]">
           DM to Book
         </a>
       </div>
@@ -156,25 +148,13 @@ function Nav() {
 }
 
 function Hero() {
-  const tagline = 'Handmade with love, crafted for your special moments.';
-  const [typed, setTyped] = useState('');
   const heroHighlights = [
     { label: 'Fresh-to-order', value: 'Blooms' },
     { label: 'Baramati studio', value: 'Custom' },
     { label: 'Same-day dispatch', value: 'Pan-India' },
   ];
-  useEffect(() => {
-    let i = 0;
-    const id = setInterval(() => {
-      i++;
-      setTyped(tagline.slice(0, i));
-      if (i >= tagline.length) clearInterval(id);
-    }, 35);
-    return () => clearInterval(id);
-  }, []);
-
   return (
-    <section id='top' className='relative overflow-hidden pt-28 pb-20 md:pt-32 md:pb-24'>
+    <section id='top' className='editorial-hero relative overflow-hidden pt-28 pb-20 md:pt-32 md:pb-24'>
       <div className='absolute inset-0 bg-gradient-to-b from-background/15 via-background/30 to-background/55' />
       <motion.div
         aria-hidden='true'
@@ -194,8 +174,8 @@ function Hero() {
         animate={{ rotate: 360 }}
         transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
       />
-      <div className='mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl items-center px-6 md:px-10'>
-        <div className='grid w-full gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center'>
+      <div className='mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl items-start px-6 pt-5 md:px-10 md:pt-7'>
+        <div className='grid w-full gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-start'>
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -208,23 +188,7 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              Baramati - Est. Handmade
-            </motion.div>
-            <motion.div
-              className='mt-6 flex justify-center lg:justify-start'
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              <LogoMark size={92} />
-            </motion.div>
-            <motion.div
-              className='mx-auto mt-5 flex w-fit items-center gap-2 rounded-full border border-gold/20 bg-black/20 px-4 py-2 text-[10px] uppercase tracking-[0.35em] text-gold/80 backdrop-blur-sm lg:mx-0'
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.18 }}
-            >
-              <span className='h-2 w-2 rounded-full bg-gold animate-pulse' />
-              Floral jewellery made for ceremonies
+              REAL FLOWERS · REFINED PRESENTATION
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
@@ -232,23 +196,11 @@ function Hero() {
               transition={{ duration: 0.9, delay: 0.22 }}
               className='mt-6 text-script text-6xl leading-none sm:text-8xl md:text-9xl text-gold-shimmer'
             >
-              Floralart
+              Nature-led florals for <em>timeless</em> celebrations.
             </motion.h1>
-            <motion.div
-              className='mt-2 flex items-center justify-center gap-4 lg:justify-start'
-              initial={{ opacity: 0, scaleX: 0.85 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-            >
-              <div className='h-px w-16 bg-gold/50' />
-              <span className='text-xs uppercase tracking-[0.5em] text-ivory/80'>by Sadiya</span>
-              <div className='h-px w-16 bg-gold/50' />
-            </motion.div>
-
             <div className='mt-10 min-h-16 max-w-xl'>
               <p className='font-display text-lg italic text-ivory/85 md:text-xl'>
-                {typed}
-                <span className='ml-1 inline-block h-4 w-[2px] animate-pulse bg-gold align-middle' />
+                Floralart by Sadiya creates made-to-order pieces with fresh blooms, pearls, and delicate finishing for haldi, mehndi, baby showers, mundavli, engagements, and weddings.
               </p>
             </div>
 
@@ -291,7 +243,7 @@ function Hero() {
             initial={{ opacity: 0, x: 36, scale: 0.98 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1.1, ease: 'easeOut', delay: 0.15 }}
-            className='relative'
+            className='hero-visual relative'
           >
             <motion.div
               aria-hidden='true'
@@ -324,7 +276,7 @@ function Hero() {
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
             />
             <motion.div
-              className='relative overflow-hidden rounded-[2rem] border border-gold/20 bg-white/72 shadow-[0_24px_70px_rgba(63,59,42,0.14)]'
+              className='hero-object relative overflow-hidden rounded-[2rem] border border-gold/20 bg-white/72 shadow-[0_24px_70px_rgba(63,59,42,0.14)]'
               animate={{ y: [0, -8, 0], rotate: [0, 0.5, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
             >
