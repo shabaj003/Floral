@@ -356,11 +356,23 @@ section[id]::before { background: linear-gradient(90deg, transparent, rgba(29,43
 }
 
 @media (max-width: 767px) {
-  header > div { margin: 10px 12px 0; }
+  html, body, #root { width: 100%; max-width: 100%; overflow-x: hidden; }
+  header > div {
+    width: calc(100% - 20px);
+    max-width: none;
+    margin: 10px 10px 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 0.75rem;
+  }
+  header > div > a:first-child { min-width: 0; flex-shrink: 1; }
+  header > div > a:last-child { flex: 0 0 auto; white-space: nowrap; padding: 0.75rem 1rem; font-size: 0.62rem; letter-spacing: 0.14em; }
   .editorial-page::before { background: linear-gradient(180deg, rgba(249,249,246,0.96), rgba(249,249,246,0.84)), var(--website-background) 72% center / cover no-repeat; }
   .editorial-hero { min-height: auto; padding-top: 8rem; }
-  .editorial-hero > div { min-height: auto; padding-top: 1.5rem; padding-bottom: 2rem; }
-  .editorial-hero > div > div { gap: 3rem; }
+  .editorial-hero > div { width: 100%; min-height: auto; padding-top: 1.5rem; padding-bottom: 2rem; }
+  .editorial-hero > div > div { width: 100%; min-width: 0; gap: 3rem; }
+  .editorial-hero > div > div > * { min-width: 0; }
+  .editorial-hero .hero-visual, .editorial-hero .hero-object { min-width: 0; max-width: 100%; }
   .hero-visual { margin-top: 0; }
   .editorial-hero h1 { font-size: clamp(3.6rem, 17vw, 5.5rem); }
   .editorial-hero p { font-size: 0.98rem; line-height: 1.65; }
